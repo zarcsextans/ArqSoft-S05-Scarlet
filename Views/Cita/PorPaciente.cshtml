@@ -6,7 +6,7 @@
     var medicos = ViewBag.Medicos as List<Medico>;
 }
 
-<h2>Agenda de Citas</h2>
+<h2>Citas del Paciente</h2>
 
 <table border="1" cellpadding="8">
     <tr>
@@ -26,10 +26,14 @@
         <tr>
             <td>@cita.Fecha</td>
             <td>@cita.Hora</td>
-            <td>@(paciente?.Nombre + " " + paciente?.Apellido)</td>
-            <td>@(medico?.Nombre + " " + medico?.Apellido)</td>
+            <td>@paciente?.Nombre @paciente?.Apellido</td>
+            <td>@medico?.Nombre @medico?.Apellido</td>
             <td>@cita.Motivo</td>
             <td>@cita.Estado</td>
         </tr>
     }
 </table>
+
+<br />
+
+<a href="/Cita">Volver a la agenda completa</a>

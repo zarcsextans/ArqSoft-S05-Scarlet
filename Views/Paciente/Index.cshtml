@@ -1,0 +1,22 @@
+﻿@model List<CitasApp.Models.Paciente>
+
+<h2>Pacientes</h2>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Nombre Completo</th>
+        <th>Email</th>
+        <th>Acciones</th>
+    </tr>
+
+    @foreach (var paciente in Model)
+    {
+        <tr>
+            <td>@paciente.Nombre @paciente.Apellido</td>
+            <td>@paciente.Email</td>
+            <td>
+                <a href="/Paciente/Detalle/@paciente.Id">Ver detalle</a>
+            </td>
+        </tr>
+    }
+</table>

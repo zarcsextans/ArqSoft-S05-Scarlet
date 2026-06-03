@@ -1,32 +1,51 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using TuProyecto.Data;
-using Microsoft.EntityFrameworkCore;
+﻿using CitasApp.Models;
+using Microsoft.AspNetCore.Mvc;
 
-public class PacienteController : Controller
+namespace CitasApp.Controllers
 {
-    private readonly ApplicationDbContext _context;
-
-    public PacienteController(ApplicationDbContext context)
+    public class PacienteController : Controller
     {
-        _context = context;
-    }
+        private static List<Paciente> pacientes = new()
+        {
+            new Paciente
+            {
+                Id = 1,
+                Nombre = "Juan",
+                Apellido = "Pérez",
+                Email = "juan@gmail.com",
+                Telefono = "9991111111"
+            },
+            new Paciente
+            {
+                Id = 2,
+                Nombre = "María",
+                Apellido = "López",
+                Email = "maria@gmail.com",
+                Telefono = "9992222222"
+            },
+            new Paciente
+            {
+                Id = 3,
+                Nombre = "Carlos",
+                Apellido = "Ruiz",
+                Email = "carlos@gmail.com",
+                Telefono = "9993333333"
+            }
+        };
 
-    // Lista todos los pacientes
-    public IActionResult Index()
-    {
-        var pacientes = _context.Pacientes.ToList();
-        return View(pacientes);
-    }
+        public IActionResult Index()
+        {
+            return View(pacientes);
+        }
 
-    // Muestra el detalle de un paciente
-    public IActionResult Detalle(int id)
-    {
-        var paciente = _context.Pacientes
-            .FirstOrDefault(p => p.Id == id);
+        public IActionResult Detalle(int id)
+        {
+            var paciente = pacientes.FirstOrDefault(p => p.Id == id);
 
-        if (paciente == null)
-            return NotFound();
+            if (paciente == null)
+                return NotFound();
 
-        return View(paciente);
+            return View(paciente);
+        }
     }
 }
