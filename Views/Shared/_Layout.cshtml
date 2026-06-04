@@ -1,39 +1,85 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - CitasApp</title>
+    <title>@ViewData["Title"] - Sistema Médico</title>
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
+
     <header>
-        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
 
-                <a class="navbar-brand" href="/">CitasApp</a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
 
-                <div class="navbar-nav">
-                    <a class="nav-link" href="/">Inicio</a>
-                    <a class="nav-link" href="/Paciente">Pacientes</a>
-                    <a class="nav-link" href="/Medico">Médicos</a>
-                    <a class="nav-link" href="/Cita">Citas</a>
-                    <a class="nav-link" href="/Home/Privacy">Privacidad</a>
+            <div class="container">
+
+                <a class="navbar-brand fw-bold" href="/">
+                    🏥 Clínica Médica
+                </a>
+
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav">
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Inicio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Paciente">Pacientes</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Medico">Médicos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Cita">Citas</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Home/Privacy">Privacidad</a>
+                        </li>
+
+                    </ul>
+
                 </div>
 
             </div>
+
         </nav>
+
     </header>
 
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+    <div class="container mt-4">
+
+        @RenderBody()
+
     </div>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <footer class="border-top footer text-muted mt-5">
+
+        <div class="container text-center py-3">
+
+            Sistema de Gestión de Citas Médicas © 2026
+
+        </div>
+
+    </footer>
+
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
