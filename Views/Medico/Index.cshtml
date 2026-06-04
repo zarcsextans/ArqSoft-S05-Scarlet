@@ -6,7 +6,7 @@
     <tr>
         <th>Nombre Completo</th>
         <th>Especialidad</th>
-        <th>Acciones</th>
+        <th>Número de Licencia</th>
     </tr>
 
     @foreach (var medico in Model)
@@ -14,11 +14,7 @@
         <tr>
             <td>@medico.Nombre @medico.Apellido</td>
             <td>@medico.Especialidad</td>
-            <td>
-                <a href="/Medico/Detalle/@medico.Id">
-                    Ver detalle
-                </a>
-            </td>
+            <td>@medico.NumeroLicencia</td>
         </tr>
     }
 </table>

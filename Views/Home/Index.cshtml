@@ -1,9 +1,20 @@
-﻿<h1>Sistema de Citas Médicas</h1>
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
 
-<p>Navegación manual mediante URL.</p>
+<div class="text-center">
+    <h1 class="display-4">Sistema de Citas Médicas</h1>
+    <p>Bienvenido al sistema.</p>
 
-<ul>
-    <li>/Paciente</li>
-    <li>/Medico</li>
-    <li>/Cita</li>
-</ul>
+    <p>
+        <a href="/Paciente">Ver Pacientes</a>
+    </p>
+
+    <p>
+        <a href="/Medico">Ver Médicos</a>
+    </p>
+
+    <p>
+        <a href="/Cita">Ver Agenda de Citas</a>
+    </p>
+</div>

@@ -26,8 +26,8 @@
         <tr>
             <td>@cita.Fecha</td>
             <td>@cita.Hora</td>
-            <td>@(paciente?.Nombre + " " + paciente?.Apellido)</td>
-            <td>@(medico?.Nombre + " " + medico?.Apellido)</td>
+            <td>@paciente?.Nombre @paciente?.Apellido</td>
+            <td>@medico?.Nombre @medico?.Apellido</td>
             <td>@cita.Motivo</td>
             <td>@cita.Estado</td>
         </tr>
