@@ -1,51 +1,22 @@
 ﻿using CitasApp.Models;
+using CitasApp.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CitasApp.Controllers
 {
     public class PacienteController : Controller
     {
-        private static List<Paciente> pacientes = new()
+        private readonly JsonDataService _json;
+
+        public PacienteController(JsonDataService json)
         {
-            new Paciente
-            {
-                Id = 1,
-                Nombre = "Juan",
-                Apellido = "Pérez",
-                Email = "juan@gmail.com",
-                Telefono = "9991111111"
-            },
-            new Paciente
-            {
-                Id = 2,
-                Nombre = "María",
-                Apellido = "López",
-                Email = "maria@gmail.com",
-                Telefono = "9992222222"
-            },
-            new Paciente
-            {
-                Id = 3,
-                Nombre = "Carlos",
-                Apellido = "Ruiz",
-                Email = "carlos@gmail.com",
-                Telefono = "9993333333"
-            }
-        };
+            _json = json;
+        }
 
         public IActionResult Index()
         {
+            var pacientes = _json.Leer<Paciente>("Data/pacientes.json");
             return View(pacientes);
-        }
-
-        public IActionResult Detalle(int id)
-        {
-            var paciente = pacientes.FirstOrDefault(p => p.Id == id);
-
-            if (paciente == null)
-                return NotFound();
-
-            return View(paciente);
         }
     }
 }
