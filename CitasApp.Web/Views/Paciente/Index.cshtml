@@ -1,0 +1,26 @@
+﻿@model List<CitasApp.Domain.Models.Paciente>
+
+<h2>Pacientes</h2>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Nombre Completo</th>
+        <th>Email</th>
+        <th>Teléfono</th>
+        <th>Acción</th>
+    </tr>
+
+    @foreach (var paciente in Model)
+    {
+        <tr>
+            <td>@paciente.Nombre @paciente.Apellido</td>
+            <td>@paciente.Email</td>
+            <td>@paciente.Telefono</td>
+            <td>
+                <a href="/Cita/PorPaciente?pacienteId=@paciente.Id">
+                    Ver citas
+                </a>
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,154 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="container">
+
+    <div class="p-5 mb-4 bg-primary text-white rounded shadow">
+        <div class="container-fluid py-4">
+
+            <h1 class="display-4 fw-bold">
+                Sistema de Gestión de Citas Médicas
+            </h1>
+
+            <p class="lead">
+                Plataforma para la administración de pacientes, médicos y citas médicas.
+            </p>
+
+            <p>
+                Bienvenido al sistema de gestión clínica. Desde aquí puede consultar
+                pacientes registrados, médicos disponibles y la agenda de citas médicas.
+            </p>
+
+            <a href="/Cita" class="btn btn-light btn-lg">
+                Ver Agenda de Citas
+            </a>
+
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card shadow h-100">
+
+                <div class="card-body text-center">
+
+                    <h1>🧑‍⚕️</h1>
+
+                    <h3>Pacientes</h3>
+
+                    <p>
+                        Consulta la información de los pacientes registrados.
+                    </p>
+
+                    <a href="/Paciente" class="btn btn-primary">
+                        Ver Pacientes
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card shadow h-100">
+
+                <div class="card-body text-center">
+
+                    <h1>👨‍⚕️</h1>
+
+                    <h3>Médicos</h3>
+
+                    <p>
+                        Consulta médicos, especialidades y licencias profesionales.
+                    </p>
+
+                    <a href="/Medico" class="btn btn-success">
+                        Ver Médicos
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4 mb-4">
+
+            <div class="card shadow h-100">
+
+                <div class="card-body text-center">
+
+                    <h1>📅</h1>
+
+                    <h3>Citas</h3>
+
+                    <p>
+                        Consulta y administra la agenda médica del sistema.
+                    </p>
+
+                    <a href="/Cita" class="btn btn-info text-white">
+                        Ver Citas
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="card shadow mt-4">
+
+        <div class="card-header bg-light">
+            <h4>Servicios Médicos Disponibles</h4>
+        </div>
+
+        <div class="card-body">
+
+            <div class="row text-center">
+
+                <div class="col-md-3">
+                    <h1>🏥</h1>
+                    <p>Medicina General</p>
+                </div>
+
+                <div class="col-md-3">
+                    <h1>❤️</h1>
+                    <p>Cardiología</p>
+                </div>
+
+                <div class="col-md-3">
+                    <h1>👶</h1>
+                    <p>Pediatría</p>
+                </div>
+
+                <div class="col-md-3">
+                    <h1>📋</h1>
+                    <p>Seguimiento Clínico</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="alert alert-primary mt-4">
+
+        <h5>Información del Sistema</h5>
+
+        <p class="mb-0">
+            Este proyecto implementa el patrón MVC utilizando ASP.NET Core,
+            navegación mediante URLs, barra de navegación global y persistencia
+            de datos mediante archivos JSON.
+        </p>
+
+    </div>
+
+</div>

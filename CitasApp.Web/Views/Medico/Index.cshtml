@@ -1,0 +1,20 @@
+﻿@model List<CitasApp.Domain.Models.Medico>
+
+<h2>Médicos</h2>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>Nombre Completo</th>
+        <th>Especialidad</th>
+        <th>Número de Licencia</th>
+    </tr>
+
+    @foreach (var medico in Model)
+    {
+        <tr>
+            <td>@medico.Nombre @medico.Apellido</td>
+            <td>@medico.Especialidad</td>
+            <td>@medico.NumeroLicencia</td>
+        </tr>
+    }
+</table>
