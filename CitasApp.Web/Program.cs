@@ -22,7 +22,7 @@ var sqlitePath = Path.Combine(dataFolder, "citasapp.db");
 // Descomenta el bloque que quieras y comenta los otros dos.
 // ¡Las interfaces (Ports) no cambian!
 
-
+/*
 // ▶ Bloque A — JSON (ACTIVO)
 builder.Services.AddSingleton<JsonDataService>(_ =>
     new JsonDataService(dataFolder));
@@ -30,22 +30,22 @@ builder.Services.AddSingleton<JsonDataService>(_ =>
 builder.Services.AddSingleton<IPacienteRepository, JsonPacienteRepository>();
 builder.Services.AddSingleton<IMedicoRepository, JsonMedicoRepository>();
 builder.Services.AddSingleton<ICitaRepository, JsonCitaRepository>();
-
-
-// ▶ Bloque B — CSV
+*/
 /*
+// ▶ Bloque B — CSV
+
 builder.Services.AddSingleton<IPacienteRepository>(_ => new CsvPacienteRepository(csvPacientes));
 builder.Services.AddSingleton<IMedicoRepository>(_ => new CsvMedicoRepository(csvMedicos));
 builder.Services.AddSingleton<ICitaRepository>(_ => new CsvCitaRepository(csvCitas));
 */
 
 // ▶ Bloque C — SQLite
-/*
+
 
 builder.Services.AddSingleton<IPacienteRepository>(_ => new SqlitePacienteRepository(sqlitePath));
 builder.Services.AddSingleton<IMedicoRepository>(_ => new SqliteMedicoRepository(sqlitePath));
 builder.Services.AddSingleton<ICitaRepository>(_ => new SqliteCitaRepository(sqlitePath));
-*/
+
 
 
 // ── 3. Servicios de aplicación ───────────────────────────────────────────────

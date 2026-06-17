@@ -16,5 +16,10 @@ namespace CitasApp.Application.Services
         {
             return _repository.ObtenerTodos();
         }
+
+        public Paciente? ObtenerPorId(int id)
+        {
+            return _repository.ObtenerPorId(id);
+        }
     }
 }

@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Calculadora";
+}
+
+<h1>Calculadora Web</h1>
+
+<input type="number" id="a" placeholder="Número A">
+<input type="number" id="b" placeholder="Número B">
+
+<br>
+<br>
+
+<button onclick="calcular('sumar')">Sumar</button>
+<button onclick="calcular('restar')">Restar</button>
+<button onclick="calcular('multiplicar')">Multiplicar</button>
+<button onclick="calcular('dividir')">Dividir</button>
+
+<h2 id="resultado">Resultado:</h2>
+
+<script src="/js/calculadora.js"></script>

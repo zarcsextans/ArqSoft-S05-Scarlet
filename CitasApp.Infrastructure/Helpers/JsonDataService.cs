@@ -1,21 +1,58 @@
-﻿namespace CitasApp.Infrastructure.Helpers
+﻿using System.Text.Json;
+
+namespace CitasApp.Infrastructure.Helpers
 {
     public class JsonDataService
     {
-        private readonly string _dataFolder;
+        private readonly string _dataPath;
 
-        public JsonDataService(string dataFolder)
+        public JsonDataService(string dataPath)
         {
-            _dataFolder = dataFolder;
+            _dataPath = dataPath;
         }
 
-        public string GetPacientesPath() =>
-            Path.Combine(_dataFolder, "pacientes.json");
+        // Rutas de archivos JSON
+        public string GetPacientesPath()
+        {
+            return Path.Combine(_dataPath, "pacientes.json");
+        }
 
-        public string GetMedicosPath() =>
-            Path.Combine(_dataFolder, "medicos.json");
+        public string GetMedicosPath()
+        {
+            return Path.Combine(_dataPath, "medicos.json");
+        }
 
-        public string GetCitasPath() =>
-            Path.Combine(_dataFolder, "citas.json");
+        public string GetCitasPath()
+        {
+            return Path.Combine(_dataPath, "citas.json");
+        }
+
+        // Leer archivo JSON genérico
+        public List<T> LeerArchivo<T>(string fileName)
+        {
+            var path = Path.Combine(_dataPath, fileName);
+
+            if (!File.Exists(path))
+                return new List<T>();
+
+            var json = File.ReadAllText(path);
+
+            return JsonSerializer.Deserialize<List<T>>(json) ?? new List<T>();
+        }
+
+        // Guardar archivo JSON genérico
+        public void GuardarArchivo<T>(string fileName, List<T> data)
+        {
+            var path = Path.Combine(_dataPath, fileName);
+
+            var json = JsonSerializer.Serialize(
+                data,
+                new JsonSerializerOptions
+                {
+                    WriteIndented = true
+                });
+
+            File.WriteAllText(path, json);
+        }
     }
 }
