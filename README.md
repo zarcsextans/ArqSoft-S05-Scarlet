@@ -78,3 +78,7 @@ Abrir Swagger:
 <img width="1920" height="1080" alt="Captura de pantalla 2026-06-19 204205" src="https://github.com/user-attachments/assets/fe1bdc60-16f2-4726-845f-b26cd3b34f9b" />
 <img width="1920" height="1080" alt="Captura de pantalla 2026-06-19 204243" src="https://github.com/user-attachments/assets/a833224e-9e67-4003-b874-167a932f1b45" />
 
+## 🤖 Declaración de uso de IA
+
+Este proyecto fue desarrollado con apoyo de herramientas de inteligencia artificial (IA) para asistencia en la resolución de errores, explicación de conceptos y mejora del código.  
+Todo el diseño, implementación y comprensión del sistema fue realizado por el estudiante como parte de la práctica académica.
