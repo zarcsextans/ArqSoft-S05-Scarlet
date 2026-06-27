@@ -16,8 +16,18 @@ builder.Services.AddScoped<JsonDataService>(sp =>
         Path.Combine(Directory.GetCurrentDirectory(), "Data")
     ));
 
-// Repositorios
-builder.Services.AddScoped<IPacienteRepository, JsonPacienteRepository>();
+builder.Services.AddScoped<IPacienteRepository>(sp =>
+{
+    var dataService = sp.GetRequiredService<JsonDataService>();
+
+    var repo = RepositoryFactory.CrearPacienteRepository(
+        builder.Environment.EnvironmentName,
+        dataService
+    );
+
+    return new LoggingPacienteRepository(repo);
+});
+ 
 builder.Services.AddScoped<IMedicoRepository, JsonMedicoRepository>();
 builder.Services.AddScoped<ICitaRepository, JsonCitaRepository>();
 
