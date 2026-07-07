@@ -29,6 +29,7 @@ classDiagram
 ```
 
 
+Este diagrama Representa las entidades principales que gestionan las citas y sus relaciones.
 
 
     
