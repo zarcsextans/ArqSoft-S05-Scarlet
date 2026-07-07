@@ -8,7 +8,7 @@ Biblioteca Digital es una aplicación web desarrollada para gestionar libros, us
 
 ## Documentación
 
-Puedes consultar la documentación completa del proyecto aquí:
+Puedes consultar la documentación del diagrama aquí:
 
 [📄 Ver documentación UML](https://github.com/zarcsextans/ArqSoft-S05-Scarlet/blob/UML/docs.md) Angelina Ruelas Cardeña**  
 TSU Desarrollo e Innovación en Software
