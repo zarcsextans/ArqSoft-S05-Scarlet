@@ -10,5 +10,6 @@ namespace CitasApp.Domain.Interfaces
         void Agregar(Medico medico);
         void Actualizar(Medico medico);
         void Eliminar(int id);
+
     }
 }
