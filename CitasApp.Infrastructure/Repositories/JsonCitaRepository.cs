@@ -35,8 +35,13 @@ namespace CitasApp.Infrastructure.Repositories
         public void Agregar(Cita entity)
         {
             var list = new List<Cita>(ObtenerTodos());
-            entity.Id = list.Count > 0 ? list[list.Count - 1].Id + 1 : 1;
+
+            entity.Id = list.Count > 0
+                ? list[list.Count - 1].Id + 1
+                : 1;
+
             list.Add(entity);
+
             File.WriteAllText(_path, JsonSerializer.Serialize(list));
         }
 
@@ -59,6 +64,15 @@ namespace CitasApp.Infrastructure.Repositories
             var list = new List<Cita>(ObtenerTodos());
             list.RemoveAll(x => x.Id == id);
             File.WriteAllText(_path, JsonSerializer.Serialize(list));
+        }
+        private List<Cita> ObtenerLista()
+        {
+            return new List<Cita>(ObtenerTodos());
+        }
+
+        private void GuardarLista(List<Cita> lista)
+        {
+            File.WriteAllText(_path, JsonSerializer.Serialize(lista));
         }
     }
 }

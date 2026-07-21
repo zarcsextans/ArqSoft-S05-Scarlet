@@ -23,20 +23,22 @@ namespace CitasApp.Web.Controllers
         {
             var citas = _citaService.ObtenerTodos();
 
-            ViewBag.Pacientes = _pacienteService.ObtenerTodos();
-            ViewBag.Medicos = _medicoService.ObtenerTodos();
+            CargarCatalogos();
 
             return View(citas);
         }
-
         public IActionResult PorPaciente(int pacienteId)
         {
             var resultado = _citaService.ObtenerPorPaciente(pacienteId);
 
-            ViewBag.Pacientes = _pacienteService.ObtenerTodos();
-            ViewBag.Medicos = _medicoService.ObtenerTodos();
+            CargarCatalogos();
 
             return View(resultado);
+        }
+        private void CargarCatalogos()
+        {
+            ViewBag.Pacientes = _pacienteService.ObtenerTodos();
+            ViewBag.Medicos = _medicoService.ObtenerTodos();
         }
     }
 }
