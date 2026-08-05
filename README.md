@@ -1,4 +1,4 @@
-#  CitasApp - Arquitectura Hexagonal
+#  CitasApp 
 
 ## Descripción
 
